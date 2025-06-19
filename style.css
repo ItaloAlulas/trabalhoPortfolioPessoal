@@ -1,0 +1,304 @@
+/* Transforma todos os elementos da página em caixas de borda. */
+* {
+    box-sizing: border-box;
+}
+
+/*
+Transformando os elementos dentro de body em elementos flexíveis e de alinhamento de coluna e adicionando
+preenchimento de topo para que a primeira sessão não fique escondida atrás do cabeçalho.
+*/
+body {
+    margin: 0;
+    padding-top: 130px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Fluidez na página ao clicar nos links internos */
+html {scroll-behavior: smooth}
+
+/* 
+Estilo do Cabeçalho. É utilizada posição fixa para que ele apareça durante 
+toda a navegação, e z-index = 1000 para que não fique atrás de nenhum elemento.
+*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(51, 51, 51);
+    border-bottom: 3px solid goldenrod;
+    color: white;
+    padding: 10px;
+    font-family: 'Times New Roman', serif;
+    z-index: 1000;
+}
+/* Nome/Logo dentro do cabeçalho */
+.header h1 {
+    font-size: 35px;
+    margin: 0;
+    padding: 0;
+}
+/*
+Deixar a lista sem ordem flexível, fazendo com o que os links fiquem um
+do lado do outro e com controle de margem entre eles por meio do uso do gap.
+*/
+.header ul {
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+    padding: 0;
+}
+/* Estilização dos links do cabeçalho. */
+.header a {
+    text-decoration: none;
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    background-color: #555;
+    padding: 6px 9px;
+    border-radius: 10px;
+    border: 1px solid white;
+    box-shadow: 0 2px 4px rgba(0,0,0,25);
+    transition: 0.3s;
+}
+/* Efeito de fazer o link levantar e transformar suas cores brancas em douradas ao passar com o cursor por cima. */
+.header a:hover {
+    transform: translateY(-2px);
+    border-color: goldenrod;
+    color: goldenrod;
+}
+/* Deixar os elementos da primeira seção flexíveis e em alinhamento de coluna. */
+.section-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Estilização do título da primeira seção. */
+.section-1 h1 {
+    font-size: 30px;
+    margin-bottom: 75px;
+    color: rgb(51, 51, 51);
+    border-bottom: 2px solid goldenrod;
+    padding-bottom: 10px;
+}
+.section-1 .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 75px;
+}
+/* Estilização do contêiner dos textos da primeira seção. */
+.introducao {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+/* Estilização dos textos da primeira seção. */
+.section-1 p {
+    width: 600px;
+    font-size: 20px;
+    text-indent: 1em;
+    line-height: 27px;
+    background-color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,25);
+    margin: 0;
+    transition: 0.1s;
+}
+/* Efeito de mudar a cor da sombra de caixa quando o cursor estiver por cima da caixa de texto. */
+.section-1 p:hover {
+    box-shadow: 0 1px 4px rgba(218,165,32,25);
+}
+/* Estilização da imagem do barco. Foi-se utilizado object-fit para a imagem não ter sua proporção perdida. */
+.section-1 img {
+    width: 450px;
+    height: 236px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+/* Estilização da descrição da imagem da primeira seção. */
+#descricaoImagem {
+    font-size: 15px;
+    width: 400px;
+    color: rgb(51, 51, 51);
+    background-color: white;
+    box-shadow: 0 0 0 0;
+}
+/* Transformação da segunda seção em elemento flexível e de alinhamento de coluna. */
+.section-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 75px;
+}
+/* Título da segunda seção. */
+.section-2 h1 {
+    font-size: 30px;
+    margin-bottom: 75px;
+    color: rgb(51, 51, 51);
+    border-bottom: 2px solid goldenrod;
+    padding-bottom: 10px;
+}
+/* Lista dos itens de cada uma das minhas formações. */
+.section-2 ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+}
+/* Estilização única de cada um dos itens da minha formação. */
+.item-formacao {
+    font-size: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    background: #eee;
+    padding: 15px 30px;
+    width: 650px;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,25);
+}
+/* Estilização da imagem do primeiro item. */
+.item1 img {
+    width: 40px;
+}
+/* Estilização da imagem do segundo item. */
+.item2 img {
+    width: 45px;
+}
+/* Estilização da imagem do terceiro item. */
+.item3 img {
+    width: 50px;
+    transform: translateX(3px);
+}
+/* Estilização da imagem do quarto item. */
+.item4 img {
+    width: 45px;
+    transform: translateX(1px);
+}
+/* Transformação da terceira seção em um elemento flexível e de alinhamento de coluna. */
+.section-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 38px;
+}
+/* Título da terceira seção. */
+.section-3 h1 {
+    font-size: 30px;
+    margin-bottom: 75px;
+    color: rgb(51, 51, 51);
+    border-bottom: 2px solid goldenrod;
+    padding-bottom: 10px;
+}
+/* Transformação do contêiner com os mockups em elemento flexível, deixando os mockups alinhados horizontalmente. */
+.mockup {
+    display: flex;
+    gap: 75px;
+    border: 4px solid goldenrod;
+    padding: 40px 60px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+/* Estilização única do tamanho das imagens de mockup. */
+.imagemMockup {
+    width: 275px;
+    transition: 0.3s;
+}
+/* Efeito de levantar a imagem do mockup quando o cursor estiver por cima. */
+.imagemMockup:hover {
+    transform: translateY(-5px);
+}
+/* Estilização dos botões de acessar os sites apresentados. */
+.section-3 a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    background: black;
+    padding: 5px 16px 9px;
+    border-radius: 30px;
+    transition: 0.5s;
+    margin-bottom: 75px;
+}
+/* Efeito de empurrar o botão para o lado direito e trocar sua cor de fundo para dourado quando o cursor estiver por cima. */
+.section-3 a:hover {
+    transform: translateX(5px);
+    background: goldenrod;
+}
+
+/* Transformação da quarta seção em um elemento flexível. */
+.section-4 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 125px;
+}
+/* 
+Transformação do container em que o formulário está contido em elemento flexível de alinhamento de coluna, deixando os elementos um abaixo do outro.
+Também foi adicionada uma borda dourada e demais estilizações.
+*/
+.section-4 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid goldenrod;
+    padding: 0px 25px 25px;
+    gap: 10px;
+    border-radius: 5px;
+}
+/* Estilização do título "Contate-me" do formulário. */
+.section-4 h2 {
+    border-bottom: 2px solid goldenrod;
+    padding-bottom: 7px;
+}
+/* Estilização padrão para os elementos do formulário */
+input, textarea, button {
+    width: 250px;
+    padding: 10px;
+    background: #eee;
+    border: 1px solid #eee;
+    border-radius: 3px;
+}
+/* Definição da altura padrão do textarea. */
+textarea {
+    height: 75px;
+}
+/* Estilização completa do botão do formulário */
+button {
+    background:	rgb(60, 179, 113);
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+/* Efeito de mudar a cor de fundo do botão do formulário quando o cursor estiver por cima. */
+button:hover {
+    background-color: #2e8b57;
+}
+/* Estilização da linha que separa a terceira seção da quarta seção. */
+hr {
+    width: 800px;
+    height: 1px;
+    background: #555;
+    border: #555;
+    margin-bottom: 110px;
+}
+/* Estilização do rodapé. */
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#666;
+    color: white;
+    font-family: Geneva, Verdana, sans-serif;
+    height: 75px;
+    font-size: 15px;
+}
